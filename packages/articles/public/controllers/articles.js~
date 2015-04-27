@@ -13,9 +13,7 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
         var article = new Articles({
           title: this.title,
           content: this.content,
-          /* [ExodusSG] Start to insert code to pass buddy email address to article body */
-          buddy: this.buddy
-          /* [ExodusSG] End of insertion */
+	  buddy: this.buddy
         });
         article.$save(function(response) {
           $location.path('articles/' + response._id);
@@ -23,9 +21,7 @@ angular.module('mean.articles').controller('ArticlesController', ['$scope', '$st
 
         this.title = '';
         this.content = '';
-        /* [ExodusSG] Start to clean the field of buddy email address in this body */
-        this.buddy = '';
-        /* [ExodusSG] End of insertion */
+	this.buddy = '';
       } else {
         $scope.submitted = true;
       }
